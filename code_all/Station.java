@@ -34,8 +34,4 @@ public class Station {
 	public float getLng() {
 		return lng;
 	}
-	public void setLng(float lng) {
-		this.lng = lng;
-	}
 	
-}
