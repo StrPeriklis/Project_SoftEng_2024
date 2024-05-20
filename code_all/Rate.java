@@ -80,5 +80,6 @@ public class Rate {
 	public void setB(Bus b) {
 		this.b = b;
 	}
+
 	
 }
