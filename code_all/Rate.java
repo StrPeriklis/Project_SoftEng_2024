@@ -81,5 +81,4 @@ public class Rate {
 		this.b = b;
 	}
 	
-	
 }
