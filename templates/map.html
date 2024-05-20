@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>OMNIBUS</h1>
+</div>
+<div th:replace="menu"></div>
+ 
+<div class="container">
+  <div id=map style='width:100%; height:50vh;'></div>
+</div>
+
+<script>
+	var map;
+function initMap() {
+	  const myLatLng = { lat: -25.363, lng: 131.044 };
+	   map = new google.maps.Map(document.getElementById("map"), {
+	    zoom: 4,
+	    center: myLatLng,
+	  });
+
+	
+	}
+
+	window.initMap = initMap;
+
+	function getall()
+	{
+		$.get("/getPoints",(res)=>
+		{
+			
+			var P=res;
+			for (var i=0;i<P.length;i++)
+			{
+				let myLatLng={lat: P[i].lat/1 , lng: P[i].lng/1};
+				let mrk=new google.maps.Marker({
+					position: myLatLng,
+				    map,
+				    title: P[i].title
+				});
+				
+				let contentString=`Point: ${P[i].title} lat:${P[i].lat} lng:${P[i].lng}<br>
+										<a href='/details?id=${P[i].pid}'>Details</a>`;
+				
+				let info=new google.maps.InfoWindow({
+					content: contentString,
+				    ariaLabel: "Uluru",
+				});
+				
+				mrk.addListener("click", () => {
+					    info.open({
+					      anchor: mrk,
+					      map,
+					    });
+					  }); 
+					 
+			}
+		});
+	}
+	
+	getall();
+</script>
+ <script
+      src="https://maps.googleapis.com/maps/api/js?callback=initMap&v=weekly"
+      defer
+    ></script>
+</body>
+</html>
