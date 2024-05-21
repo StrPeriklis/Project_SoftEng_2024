@@ -26,6 +26,7 @@ public class Ticket {
 	@ManyToOne
 	  @JoinColumn(name = "uid", referencedColumnName = "id")
 	private User U;
+
 	
 	
 }
