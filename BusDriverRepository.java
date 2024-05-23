@@ -1,4 +1,4 @@
-package com.example.omnibus
+package com.example.omnibus;
 
 import org.springframework.data.repository.CrudRepository;
 
