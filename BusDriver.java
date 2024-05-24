@@ -32,3 +32,24 @@ public class BusDriver {
 	public Bus getB() {
 		return B;
 	}
+	
+	public void setB(Bus b) {
+		B = b;
+	}
+	public Driver getD() {
+		return D;
+	}
+	public void setD(Driver d) {
+		D = d;
+	}
+	public Date getDt() {
+		return dt;
+	}
+	public void setDt(Date dt) {
+		this.dt = dt;
+	}
+	
+	
+	
+}
+
