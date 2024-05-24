@@ -10,3 +10,12 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
+
+public class BusDriver {
+	@Id
+	  @GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;
+
+	@ManyToOne
+	  @JoinColumn(name = "bid", referencedColumnName = "id")
+	private Bus B;
