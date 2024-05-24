@@ -19,3 +19,16 @@ public class BusDriver {
 	@ManyToOne
 	  @JoinColumn(name = "bid", referencedColumnName = "id")
 	private Bus B;
+	@ManyToOne
+	  @JoinColumn(name = "did", referencedColumnName = "id")
+	private Driver D;
+	private Date dt;
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public Bus getB() {
+		return B;
+	}
