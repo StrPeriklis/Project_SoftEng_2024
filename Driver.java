@@ -13,3 +13,19 @@ public class Driver {
 	  @GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	
+	private String email;
+	private String password;
+	private String fullname;
+	private String afm;
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
