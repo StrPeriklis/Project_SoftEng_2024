@@ -33,3 +33,54 @@ private Integer gradebus;
 	private Bus b;
 	public Integer getId() {
 		return id;
+
+	
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public Integer getGradebus() {
+		return gradebus;
+	}
+	public void setGradebus(Integer gradebus) {
+		this.gradebus = gradebus;
+	}
+	public Integer getGradeDriver() {
+		return gradeDriver;
+	}
+	public void setGradeDriver(Integer gradeDriver) {
+		this.gradeDriver = gradeDriver;
+	}
+	public String getComment1() {
+		return Comment1;
+	}
+	public void setComment1(String comment1) {
+		Comment1 = comment1;
+	}
+	public String getComment2() {
+		return Comment2;
+	}
+	public void setComment2(String comment2) {
+		Comment2 = comment2;
+	}
+	public Date getDt() {
+		return dt;
+	}
+	public void setDt(Date dt) {
+		this.dt = dt;
+	}
+	public Driver getDrv() {
+		return drv;
+	}
+	public void setDrv(Driver drv) {
+		this.drv = drv;
+	}
+	public Bus getB() {
+		return b;
+	}
+	public void setB(Bus b) {
+		this.b = b;
+	}
+	
+	
+}
