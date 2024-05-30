@@ -80,3 +80,23 @@ public class MainController {
 		return driverRepository.findAll();
 	   
 	  }
+
+	@PostMapping("/signup") 
+	  public @ResponseBody String signup(@RequestParam String fullname, @RequestParam String email
+		      , @RequestParam String password) {
+	    
+		User u=new User();
+		u.setEmail(email);
+		u.setPassword(password);
+		u.setFullname(fullname);
+		try {
+		userRepository.save(u);
+		return "1";
+		}
+		catch(Exception e)
+		{
+			return "0";	
+		}
+	    
+	  }
+	}
