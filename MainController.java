@@ -18,3 +18,28 @@ import jakarta.servlet.http.HttpSession;
 
 @Controller
 
+@RequestMapping("/")
+public class MainController {
+	
+	@Autowired
+	private UserRepository userRepository; 
+	@Autowired
+	private StationRepository stationRepository; 
+	@Autowired
+	private BusRepository busRepository; 
+	@Autowired
+	private DriverRepository driverRepository; 
+  @Autowired
+	private TicketRepository ticketRepository; 
+	@Autowired
+	private LineRepository lineRepository; 
+	@Autowired
+	private RateRepository rateRepository; 
+	@Autowired
+	private BusDriverRepository busdriverRepository; 
+	
+	@GetMapping("/")
+	  public  String startBody(Model model) {
+	    
+	    return "index";
+	  }
