@@ -29,7 +29,7 @@ public class MainController {
 	private BusRepository busRepository; 
 	@Autowired
 	private DriverRepository driverRepository; 
-  @Autowired
+        @Autowired
 	private TicketRepository ticketRepository; 
 	@Autowired
 	private LineRepository lineRepository; 
@@ -42,4 +42,41 @@ public class MainController {
 	  public  String startBody(Model model) {
 	    
 	    return "index";
+	  }
+        @GetMapping("/userpage")
+	  public  String startBody(HttpSession session,Model model) {
+		
+	    String uid=session.getAttribute("uid").toString();
+	    System.out.print(uid);
+	    return "userpage";
+	  }
+	
+	@GetMapping("/map")
+	  public  String map(HttpSession session,Model model) {
+		
+	    String uid=session.getAttribute("uid").toString();
+	    System.out.print(uid);
+	    return "map";
+	  }
+	
+	
+	
+	
+	@GetMapping("/getPoints")
+	  public @ResponseBody Iterable<Station>  getPoints() {
+		return stationRepository.findAll();
+	   
+	  }
+	
+	
+	@GetMapping("/getBuses")
+	  public @ResponseBody Iterable<Bus>  getbuses() {
+		return busRepository.findAll();
+	   
+	  }
+	
+	@GetMapping("/getDrivers")
+	  public @ResponseBody Iterable<Driver>  getdrivers() {
+		return driverRepository.findAll();
+	   
 	  }
